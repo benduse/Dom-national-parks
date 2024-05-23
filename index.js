@@ -11,6 +11,7 @@ const descriptions = document.querySelectorAll(".description-display");
     
     if (ratingValue > 4.7){
         rating.style.fontWeight ="bold";
+        rating.style.color = "#3ba17c";
     }
    
   }
