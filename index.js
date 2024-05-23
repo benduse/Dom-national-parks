@@ -1,30 +1,66 @@
+// select all the descriptions on the page
 
-console.log(document);
+const descriptions = document.querySelectorAll(".description-display");
 
-/**this statement will sellect al the desctiption on the page
- */
-/**const descriptions = document.querySelectorAll(".description-display");
+for (let desc of descriptions.values()) {
+  let content = desc.innerText;
 
- const ratings = document.querySelectorAll(".rating-display .value");
- for (let rating of ratings) {
-    let ratingValue = parseFloat(rating.innerText);
-    
-    if (ratingValue > 4.7){
-        rating.classList.add("high-rating");
-        rating.classList.remove("value");
-    }
-   
+  if (content.length > 250) {
+    content = content.slice(0, 250);
+    content = content + '<a href="#">...</a>';
   }
-  */
 
-/**the code slects the park class as a selector on the page */
-  const parks = document.querySelectorAll(".park-display");
+  desc.innerHTML = content;
+}
 
-  /** this code gives us the number of parks using the length property of the list */
-  const numberParks = parks.length;
+// select all rating values
+const ratings = document.querySelectorAll(".rating-display .value");
 
-  /** creates an emply element using div */
-  const newElement = document.createElement("div");
+for (let rating of ratings) {
+  let ratingValue = parseFloat(rating.innerText);
 
-  /** the code below sets the text of the element created with innerTexxt property */
-  newElement.innerText = `${numberParks} exciting parks to visit`;
+  if (ratingValue > 4.7) {
+    rating.classList.add("high-rating");
+    rating.classList.remove("value");
+  }
+}
+
+// Select all parks
+const parks = document.querySelectorAll(".park-display");
+const numberParks = parks.length;
+
+// create a new element
+const newElement = document.createElement("div");
+
+// add the text
+newElement.innerText = `${numberParks} exciting parks to visit`;
+
+//add the class
+newElement.classList.add("header-statement");
+
+// insert the new element
+const header = document.querySelector("header");
+header.appendChild(newElement);
+
+// get the parent element of all parks
+const main = document.querySelector("main");
+
+/**select a single park*/
+const park = main.querySelector(".park-display");
+
+// remove that park
+//main.removeChild(park);
+
+//select element 
+const firstParkDisplay = document.querySelector(".park-display")
+//console.log(firstParkDisplay)
+//create button or new element button
+const newButton = document.createElement("button")
+
+newButton.innerHTML = "Learn More"
+//adding styles to the new created button 
+newButton.classList.add("button-styling");
+
+//append element to the dome. add the button to the web
+firstParkDisplay.appendChild(newButton);
+console.log(newButton)
