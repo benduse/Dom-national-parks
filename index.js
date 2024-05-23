@@ -5,16 +5,12 @@ console.log(document);
  */
 const descriptions = document.querySelectorAll(".description-display");
 
-/** the code below addd ... on the content with more than two hundred and fity characters */
-
-for (let desc of descriptions.values()) {
-    let content = desc.innerText;
-
-    if (content.length > 250) {
-        content = content.slice(0, 250);
-        content = content + '<a href="#">...</a>';
-    }
+ const ratings = document.querySelectorAll(".rating-display .value");
+ for (let rating of ratings) {
+    let ratingValue = parseFloat(rating.innerText);
     
-    desc.innerText = content;
+    if (ratingValue > 4.7){
+        rating.computedStyleMap.fontWeight ="bold";
+    }
+    console.log(ratingValue);
   }
- 
