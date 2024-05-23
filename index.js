@@ -10,7 +10,7 @@ const descriptions = document.querySelectorAll(".description-display");
     let ratingValue = parseFloat(rating.innerText);
     
     if (ratingValue > 4.7){
-        rating.computedStyleMap.fontWeight ="bold";
+        rating.style.fontWeight ="bold";
     }
-    console.log(ratingValue);
+   
   }
