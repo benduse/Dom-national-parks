@@ -64,3 +64,9 @@ newButton.classList.add("button-styling");
 //append element to the dome. add the button to the web
 firstParkDisplay.appendChild(newButton);
 console.log(newButton)
+
+const firstBtn = document.querySelector("button");
+
+firstBtn.addEventListener("click", (event) => {
+  console.log("You clicked the button", event);
+});
